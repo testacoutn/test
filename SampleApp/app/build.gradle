@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        applicationId "kidoz.android.native.admob"
+        minSdkVersion 17
+        targetSdkVersion 31
+        versionCode 105
+        versionName "8.9.7_1.8.1.1"
+
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("kidozdevkey")
+            storePassword "kidoz123"
+            keyAlias "kidozdevkey"
+            keyPassword "kidoz123"
+        }
+    }
+
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            debuggable true
+            shrinkResources false
+
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 11
+        targetCompatibility 11
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    // Admob
+    implementation "com.google.android.gms:play-services-ads:20.5.0"
+    //Kidoz
+    implementation "org.greenrobot:eventbus:3.2.0"
+    implementation "net.kidoz.sdk:kidoz-android-native:8.9.7"
+    implementation "net.kidoz.sdk:kidoz-android-admob-adapter:1.8.1.1"
+
+}
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'minutes'
+}
+
+
+
