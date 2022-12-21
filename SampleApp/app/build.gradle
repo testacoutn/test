@@ -7,8 +7,9 @@ android {
         applicationId "kidoz.android.native.admob"
         minSdkVersion 17
         targetSdkVersion 31
-        versionCode System.getenv("VERSION_CODE") ? System.getenv("VERSION_CODE").toInteger() : 201
-        versionName System.getenv("VERSION_NAME") ? System.getenv("VERSION_NAME").toString() : "1.2.1"
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName (VERSION_NAME+VERSION_CODE)
+
 
     }
 
