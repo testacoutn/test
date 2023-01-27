@@ -10,7 +10,7 @@ echo "Looking for $ANDROID_GRADLE_FILE to update build version";
 
 if [ -e "$ANDROID_GRADLE_FILE" ]
 then
-    echo "Updating version Name to $VERSION_NAME in $ANDROID_GRADLE_FILE"
+    echo "Updating version Name  to $VERSION_NAME in $ANDROID_GRADLE_FILE"
     sed -i "" 's/VERSION_NAME=*.*.[0-9]*/VERSION_NAME='3.0.$APPCENTER_BUILD_ID'/' $ANDROID_GRADLE_FILE
 
     echo "File content:"
